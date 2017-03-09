@@ -21,8 +21,8 @@ class CoreTestSuite(unittest.TestCase):
 
 
 
-    def test_add_string_string(self):
-        self.assertRaises(code.concatenate('hola', 'hola'), 'holahola')
+    def test_concatenate_string_string(self):
+        self.assertEquals(code.concatenate('hola', 'hola'), 'holahola')
 
 
 
