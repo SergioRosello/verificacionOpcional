@@ -22,10 +22,10 @@ class CoreTestSuite(unittest.TestCase):
 #https://docs.python.org/2/library/errno.html
 
     def test_concatenate_check_args_arent_strings(self):
-        self.assertEqual(code.concatenate(1, 24), errno.EINVAL)
+        self.assertEqual(code.concatenate(True, 2), errno.EINVAL)
 
     def test_concatenate_check_args_are_strings(self):
-        self.assertEquals(code.concatenate('hola', 'hola'), 'holahola')
+        self.assertEqual(code.concatenate('hola', 'hola'), 'holahola')
 
     def test_concatenate_check_whitespaces(self):
         self.assertEqual(code.concatenate('pr ueb a', 'es paci o'), 'pruebaespacio', "El resultado no es el esperado")
