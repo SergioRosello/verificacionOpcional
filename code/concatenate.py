@@ -3,11 +3,21 @@ import errno
 
 
 def concatenate(*args):
-    output = ''
-    if len(args) < 2 or len(args) > 10:
-        return errno.EPERM
+    chain = ''
+    output = None
+    if len(args) < 2:
+        output =  errno.EPERM
+    if len(args) > 10:
+        output = errno.E2BIG
     for string in args:
-        output = output + string
+        if len(string) > 10:
+            output = errno.EINVAL
+
+    if output == None:
+        for string in args:
+            chain = chain + string
+        output = chain
+
     return output
 
 
