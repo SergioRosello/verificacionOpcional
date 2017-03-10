@@ -19,6 +19,8 @@ class CoreTestSuite(unittest.TestCase):
         # ASSERT
         self.assertEqual(result, 'holahola', "El resultado no es el esperado")
 
+
+
 #https://docs.python.org/2/library/errno.html
 
     def test_concatenate_check_args_arent_strings(self):
