@@ -16,7 +16,7 @@ def concatenate(*args):
     if output == None:
         for string in args:
             chain = chain + string
-        output = chain
+        output = chain.replace(" ", "")
 
     return output
 

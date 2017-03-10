@@ -21,6 +21,8 @@ class CoreTestSuite(unittest.TestCase):
 
 #https://docs.python.org/2/library/errno.html
 
+    def test_concatenate_check_whitespaces(self):
+        self.assertEqual(code.concatenate('pr ueb a', 'es paci o'), 'pruebaespacio', "El resultado no es el esperado")
 
     def test_concatenate_string_with_more_than_ten_characters(self):
         self.assertEqual(code.concatenate('moreThanTenCharacters', '<10Chars'), errno.EINVAL)
