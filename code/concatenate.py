@@ -10,13 +10,16 @@ def concatenate(*args):
     if len(args) > 10:
         output = errno.E2BIG
     for string in args:
-        if len(string) > 10:
+        if not isinstance(string, str):
+            output = errno.EINVAL
+        elif len(string) > 10:
             output = errno.EINVAL
 
     if output == None:
         for string in args:
             chain = chain + string
         output = chain.replace(" ", "")
+
 
     return output
 
