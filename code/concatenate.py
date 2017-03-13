@@ -2,14 +2,17 @@
 import errno
 
 
-def sumaelementos(*args):
+def sum_elements(*args):
     output = None
     if len(args) < 2:
         output = errno.EPERM
     elif len(args) > 10:
         output = errno.E2BIG
-#Control de errores
-#por que no puedo hacer esto: [output = errno.EINVAL for arg in args if not(isinstance(arg, str) or isinstance(arg, int) or isinstance(arg, float))]
+
+    # Control de errores
+    # por que no puedo hacer esto:
+    # [output = errno.EINVAL for arg in args if not(isinstance(arg, str)
+    # or isinstance(arg, int) or isinstance(arg, float))]
     else:
         for arg in args:
             if not(isinstance(arg, str) or isinstance(arg, int) or isinstance(arg, float)):
@@ -25,7 +28,6 @@ def sumaelementos(*args):
             output = sum(args)
 
     return output
-
 
 
 def concatenate(*args):
@@ -51,4 +53,4 @@ def concatenate(*args):
 
 if __name__ == "__main__":
     print concatenate('hola', 'hola')
-    print sumaelementos('hola', 1, 2, 'buenas', 7, 'quetal', 2.543, '?', 23, -54, -4.3)
+    print sum_elements('hola', 1, 2, 'buenas', 7, 'quetal', 2.543, '?', 23, -54, -4.3)

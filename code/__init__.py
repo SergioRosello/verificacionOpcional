@@ -1,2 +1,2 @@
 from .concatenate import concatenate
-from .concatenate import sumaelementos
+from .concatenate import sum_elements
